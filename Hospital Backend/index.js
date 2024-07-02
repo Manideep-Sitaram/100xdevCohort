@@ -32,7 +32,15 @@ app.get("/",(req,res) =>{
     const userName = req.query.userName;
     const userData = users.find((user) => user.name === userName);
 
-    res.send(userData)
+    const userKidneyCount = userData.kidneys.length;
+    const healthyKidneyCount = (userData.kidneys.filter((kidney) => kidney.isHealthy)).length
+    const unHealthyKidneyCount = userKidneyCount - healthyKidneyCount
+
+    res.json({
+        userKidneyCount,
+        healthyKidneyCount,
+        unHealthyKidneyCount
+    })
 })
 
 app.post("/", (req,res) =>{
