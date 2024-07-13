@@ -12,5 +12,27 @@ const coarseSchema = new mongoose.Schema({
     description: String,
     price: Number,
     imageLink: String,
-    published: Boolean,
+    published: {
+        type: Boolean,
+        default: true
+    },
 });
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    password: String,
+    purchasedCoarses: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Coarse"
+    }]
+})
+
+const Admin = mongoose.model("Admin",adminSchema);
+const Coarse = mongoose.model("Coarse",coarseSchema);
+const User = mongoose.model("User",userSchema)
+
+module.exports ={
+    Admin,
+    Coarse,
+    User
+}
