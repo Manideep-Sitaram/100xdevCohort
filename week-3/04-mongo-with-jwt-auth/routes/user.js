@@ -47,8 +47,19 @@ router.post('/courses/:courseId', userMiddleware, async(req, res) => {
     
 });
 
-router.get('/purchasedCourses', userMiddleware, (req, res) => {
+router.get('/purchasedCourses', userMiddleware, async(req, res) => {
     // Implement fetching purchased courses logic
+    const username = req.username;
+
+    const user = await User.findOne({username});
+
+    if(!user) res.status(411).send("Please send the Valid Credentials");
+
+    const purchasedCourses = await user.populate('purchasedCourses','title price');
+
+    res.json(purchasedCourses)
+
+
 });
 
 module.exports = router
