@@ -1,5 +1,11 @@
+import { useEffect } from "react"
 
 function App() {
+
+  useEffect(function(){
+    alert("Hi There")
+  },[])
+
   return <div>
     <CardWrapper >
       hi there
