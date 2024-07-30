@@ -1,0 +1,61 @@
+p{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+.card-full{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+}
+.backgroundColor{
+    background-color: aquamarine;
+    color: aquamarine;
+    width: 100%;
+    padding: 75px 0px 20px;
+}
+
+.basicDetails{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.boldText{
+    font-weight: bold;
+    font-size: medium;
+}
+
+.lightText{
+    font-weight: lighter;
+    color: grey;
+}
+
+.profile p{
+    padding: 5px;
+}
+.profile > p{
+    text-align: center;
+}
+.social{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.smallText{
+    font-size: smaller;
+}
+.profilePicture{
+    width: 20px;
+}
